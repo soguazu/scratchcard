@@ -1,0 +1,19 @@
+{
+  "name": "scratchcard",
+  "version": "1.0.0",
+  "description": "simple scratch card generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soguazu/scratchcard.git"
+  },
+  "author": "Grey Oguazu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soguazu/scratchcard/issues"
+  },
+  "homepage": "https://github.com/soguazu/scratchcard#readme"
+}

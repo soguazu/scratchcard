@@ -1,0 +1,306 @@
+.clearfix {
+    clear: both;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    height: auto;
+    color: #555;
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    height: auto;
+    background-color: #f3f3f2;
+    box-sizing: border-box;
+}
+
+.header {
+    background-image: linear-gradient(#f93d66a4, #7047d7a4), url(/scratchcard/resources/images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    z-index: 1;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.custom-nav {
+    background: linear-gradient(-45deg,#f93d67, #7047d7);
+    background: -webkit-linear-gradient(-45deg,hsl(347, 94%, 61%), #7047d7);
+    background: -moz-linear-gradient(-45deg,#f93d67, #7047d7);
+    background: -ms-linear-gradient(-45deg,#f93d67, #7047d7);
+    background: -o-linear-gradient(-45deg,#f93d67, #7047d7);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -ms-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.custom-nav .navbar-brand {
+    color: #ffffff !important;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.custom-nav ul li a {
+    color: #ffffff !important;
+}
+
+.custom-nav navbar-toggler {
+    color: #ffffff !important;
+}
+
+position {
+    position: relative;
+}
+
+.content {
+    margin-top: 120px;
+    color: #f7f7ff;
+}
+
+.content p {
+    font-size: 1.3rem;
+}
+
+.content-form {
+    margin-top: 50px;
+    color: #888888;
+}
+
+/* === Signup Form Design === */
+
+.card {
+    border: 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    -ms-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    -o-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    position: relative;
+    
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    margin: 20px;
+}
+
+
+
+.card-header {
+    background-color: #ffffff;
+    color: #7047d7;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    background-color: #ffffff;
+}
+
+.form-heading, {
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-control {
+    border-color: #7047d7; 
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+}
+
+.form-control:hover {
+    cursor: pointer;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.btn:focus,
+.uneditable-input:focus {   
+  border-color: #7047d780;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #7047d780;
+  outline: 0 none;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="search"],
+.uneditable-input: {   
+    color: #7047d7 !important;
+}
+
+
+.form-btn {
+    background-color: #7047d7;
+    border: 0;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    font-size: 16px;
+}
+
+.form-btn:hover {
+    background-color: #8160d6;
+}
+
+.form-btn:focus {
+    background-color: #7047e7 !important;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    top: 5px;
+    border: 0px;
+    -webkit-transform:  rotate(-10deg);
+    -moz-transform:  rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    background-color: #7047d7;
+    z-index: -1;
+}
+
+input::placeholder {
+    color: #7047d7 !important;
+    font-size: 14px;
+}
+
+.signup-cover {
+    display: none
+}
+
+.switch {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #0857a1;
+}
+
+.fa-user-plus,
+.fa-user-lock {
+    -o-animation: icon-animate 3s infinite;
+    -moz-animation: icon-animate 3s infinite;
+    -webkit-animation: icon-animate 3s infinite;
+}
+
+@keyframes icon-animate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+
+}
+
+.name-error,
+.email-error,
+.password-error,
+.confirm-error {
+    font-family: 'Lato';
+}
+
+.fa-check-circle {
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+.border-red {
+    border-color: red;
+    color: red !important;
+}
+
+.error {
+    color: red;
+    font-weight: 300;
+}
+
+
+.border-green {
+    border-color: green;
+    color: green !important;
+}
+
+.success {
+    color: green;
+}
+
+.fa-spinner {
+    color: #7047d7
+}
+
+.progress {
+    width: 100%;
+    height: 4px;
+    position: relative;
+    background-color: #7047d7;
+}
+
+.progress::before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 4px;
+    top: 0%;
+    left: 0%;
+    background-color: orange;
+    animation: wait 1s infinite;
+    -webkit-animation: wait 1s infinite;
+}
+
+@keyframes wait {
+    10%{width: 10%}
+    30%{width: 30%}
+    50%{width: 50%}
+    70%{width: 70%}
+    100%{width: 100%}
+}
+
+.success-area {
+    background-color: #ffffff;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login / Logout Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Paytone+One" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/all.min.css">
+    <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+
+
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">ScratchDam</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    </ul> -->
+                    <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+                <div class="row position">
+                    <div class="col-md-8 content">
+                        <h1>Secure Online Scratch Card Generator</h1><hr>
+                        <p>You can now purchase Airtime of any GSM Network in Nigeria, cutting across Nigeria online instantly at the comfort of your home or office.</p>
+                    </div>
+                    <div class="col-md-4 content-form">
+                        <div class="container main">
+                            <div class="row">
+                            </div>  <!-- close row -->
+                        </div> <!-- close container -->
+                        <div class="signup-cover">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h3 class="form-heading">
+                                                Signup
+                                            </h3>
+                                        </div> <!-- col -->
+                                        <div class="col-md-3 text-right">
+                                            <!-- <i class="fas fa-user-plus fa-2x"></i> -->
+                                        </div>
+                                    </div> 
+            
+                                </div>
+                                <div class="card-body">
+                                    <form action="" id="signup_submit">
+                                        <div class="form-group show-progress">
+        
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <input type="text" id="name" class="form-control" name="name" placeholder="Ente Name...">
+                                            <div class="name-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="email" class="form-control" name="email" placeholder="Enter Email...">
+                                            <div class="email-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" id="password" class="form-control" name="password" placeholder="Choose password...">
+                                            <div class="password-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" id="confirm" class="form-control" name="confirm" placeholder="Confirm Password...">
+                                            <div class="confirm-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" id="submit" class="btn btn-success btn-block form-btn" >
+                                                Create Account
+                                            </button>
+                                        </div>
+                                        <div class="form-group">
+                                            <a href="#" class="switch btn btn-block" id="login">Already have an account?</a>
+                                        </div>
+                                    </form>
+                                </div> <!-- card-body -->
+                            </div> <!-- card -->
+                        </div>
+                        
+                        <div class="login-cover">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h3 class="form-heading">
+                                                Signin
+                                            </h3>
+                                            <p>Lorem, ipsum dolor. </p>
+                                        </div> <!-- col -->
+                                        <div class="col-md-3 text-right">
+                                            <!-- <i class="far fa-user-plus fa-3x"></i> -->
+                                            <i class="fas fa-user-lock fa-2x"></i>
+                                        </div>
+                                    </div> 
+            
+                                </div>
+                                <div class="card-body">
+                                    <form action="" id="signin-form">
+                                        <!-- <div class="form-group show-progress"></div> -->
+                                        <div class="form-group">
+                                            <div class="login-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="login-email" class="form-control" name="login-email" placeholder="Enter Email...">
+                                            <div class="login-email-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" id="login-password" class="form-control" name="login-password" placeholder="Enter password...">
+                                            <div class="login-password-error error"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" id="login-submit" class="btn btn-success btn-block form-btn" >
+                                                Login
+                                            </button>
+                                            <div class="form-group">
+                                                <a href="#" class="switch btn btn-block" id="signup">Create New Account?</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- card-body -->
+                            </div> <!-- card -->
+                        </div> <!-- login-cover -->
+                    </div>
+                </div>
+            </div>
+    </header>
+
+    
+
+    <script src="./resources/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="./resources/js/bootstrap.min.js"></script>
+    <script src="./resources/js/login.js"></script>
+    
+    <script>
+        function aaa(message,secret) {
+            var hash = CryptoJS.AES.encrypt(message, secret);
+            return hash
+        }
+    </script>
+    <script src="./resources/js/signup.js"></script>
+    <script src="./resources/js/main.js"></script>
+</body>
+</html>
