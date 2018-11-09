@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
     // event.preventDefault();
+    
     let name = "";
     let email = "";
     let password = "";
@@ -42,7 +43,6 @@ $(document).ready(function() {
             $("#email").removeClass("border-green");
             email = "";
         } else if (email_reg.test(email_store)) {
-            alert(email_store);
             $.ajax({
                 type: "GET",
                 url: "http://localhost:3000/users?email="+email_store,
@@ -53,30 +53,36 @@ $(document).ready(function() {
                 // data: {"check_email": email_store},
                 success: function(feedback) {
                     setTimeout(function() {
-
-                        if(JSON.stringify(feedback[0])) {
-                            if (JSON.stringify(feedback[0].email) !== email_store) {
-                                $(".email-error").html("<div class='text-success'><i class='far fa-thumbs-up'> Available</i></div>");
-                                $("#email").addClass("border-green");
-                                $("#email").removeClass("border-red");
-                                console.log(JSON.stringify(feedback[0].email));
-
-                                email = email_store;
-                            } else if (feedback["email"] == "email_fail") {
-                                $(".email-error").html("Email already exist!");
-                                $("#email").addClass("border-red");
-                                $("#email").removeClass("border-green");
-                                email = "";
-                            } 
+                        if (feedback.length == 0) {
+                            $(".email-error").html("<div class='text-success'><i class='far fa-thumbs-up'> Available</i></div>");
+                            $("#email").addClass("border-green");
+                            $("#email").removeClass("border-red");
+                            email = email_store;
                         } else {
                             $(".email-error").html("Email already exist!");
                             $("#email").addClass("border-red");
                             $("#email").removeClass("border-green");
                             email = "";
+                            // if (JSON.stringify(feedback[0].email) === email_store) {
+                            //     $(".email-error").html("Email already exist!");
+                            //     $("#email").addClass("border-red");
+                            //     $("#email").removeClass("border-green");
+                            //     email = "";
+                                
+                            // } else {
+                            //     $(".email-error").html("<div class='text-success'><i class='far fa-thumbs-up'> Available</i></div>");
+                            //     $("#email").addClass("border-green");
+                            //     $("#email").removeClass("border-red");
+                            //     email = email_store;
+                            // }
                         }
+                        
                     }, 1000);
                     
                 },
+                error: function(feedback) {
+                    alert(feedback);
+                }
             });
         } else {
             $(".email-error").html("Invalid email!");
@@ -139,7 +145,9 @@ $(document).ready(function() {
 
     // ==== Submit form ===
 
-    $("#submit").click(function() {
+    $("#submit").click(function(event) {
+        event.preventDefault();
+        event.stopPropagation();
         if (name.length == "" || !name_reg.test(name)) {
             $(".name-error").html("Name is required!");
             $("#name").addClass("border-red");
@@ -168,9 +176,9 @@ $(document).ready(function() {
         }
 
         if (name !== "" && email !== "" && password !== "" && confirm !== "") {
-            var hashPassword = aaa(password, "password secret 3895949948");
-            alert(hashPassword);
-            var data = {"name": name, "email":email, "password":password, "author":"grey"};
+            var hash = CryptoJS.AES.encrypt(password, "password secret").toString();
+        
+            var data = {"name": name, "email":email, "password": hash, "author":"grey"};
             $.ajax({
                 type: "POST",
                 url: "http://localhost:3000/users",
@@ -179,16 +187,25 @@ $(document).ready(function() {
                 beforeSend: function() {
                     $(".show-progress").addClass("progress");
                 },
-                success: function(response) {
-                    // setTimeout(function() {
-                    //     console.log(response);
-                    //     alert(JSON.stringify(response));
-                    //     if (feedback["error"] == "success") {
-                    //         window.location.href = feedback["path"];
-                    //     }
-                    // }, 1000);
-                    console.log("created");
-                    console.log(response);
+                success: function() {
+                    // swal({
+                    //     title: "Signup Successfully",
+                    //     text: "click to login",
+                    //     type: "success",
+                    //     closeOnConfirm: true,
+                    //     showLoaderOnConfirm: true
+                    // },
+                    setTimeout(function() {
+                        $(".signup-cover").hide("slow");
+                        $(".login-cover").show("slow");
+                        swal({
+                            title: "Signup Successfully",
+                            text: "click to login",
+                            type: "success",
+                            closeOnConfirm: true,
+                            showLoaderOnConfirm: true
+                        });
+                    }, 1000);
                 }
             });
         }

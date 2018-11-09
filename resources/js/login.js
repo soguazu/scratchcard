@@ -48,24 +48,35 @@ $(document).ready(function() {
         }
         if (email !== "" && password !== "") {
             $.ajax({
-                type: "POST",
-                url: "/?login=true",
-                data: $("#signin-form").serialize(),
+                type: "GET",
+                url: "http://localhost:3000/users?email="+email,
+                // data: $("#signin-form").serialize(),
                 dataType: "JSON",
                 beforeSend: function() {
                     $(".show-progress").addClass("progress");
                 },
                 success: function(feedback) {
-                    if (feedback["type"] == "success") {
-                        $(".login-error").html("");
-                        $(".login-error").addClass("progress");
-                        setTimeout(function() {
-                            window.location.href = feedback["path"];
-                        }, 1000);
-                    } else if(feedback["type"] == "error") {
-                        $(".login-error").html(feedback["message"]);
+                    if (feedback.length == 0) {
+                        swal({
+                            title: "Invalid Username or Password",
+                            text: "click to try again",
+                            type: "error",
+                            closeOnConfirm: true,
+                            showLoaderOnConfirm: true
+                        });   
+                    } else {
+                        var unhashed = CryptoJS.AES.decrypt(feedback[0].password, "password secret").toString(CryptoJS.enc.Utf8);
                         
-                    } 
+                        if (unhashed === password) {
+                            var date = new Date();
+                            date.setTime(date.getTime() + (60 * 1000));
+                            $.cookie("username", feedback[0].name, {expires: date});
+                            $.cookie("userid", feedback[0].email, {expires: 10});
+                            window.location.href = "http://localhost:5500/scratchcard/dashboard.html";
+                        } else {
+                            alert("Invalid login");                           
+                        }
+                    }
                 }
             });
         }

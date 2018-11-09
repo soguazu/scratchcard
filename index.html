@@ -18,24 +18,6 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav">
             <div class="container">
                 <a class="navbar-brand" href="#">ScratchDam</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    </ul> -->
-                    <!-- <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form> -->
-                </div>
             </div>
         </nav>
 
@@ -48,6 +30,9 @@
                     <div class="col-md-4 content-form">
                         <div class="container main">
                             <div class="row">
+                                <div class="message">
+
+                                </div>
                             </div>  <!-- close row -->
                         </div> <!-- close container -->
                         <div class="signup-cover">
@@ -118,7 +103,7 @@
             
                                 </div>
                                 <div class="card-body">
-                                    <form action="" id="signin-form">
+                                    <form id="signin-form">
                                         <!-- <div class="form-group show-progress"></div> -->
                                         <div class="form-group">
                                             <div class="login-error error"></div>
@@ -136,7 +121,7 @@
                                                 Login
                                             </button>
                                             <div class="form-group">
-                                                <a href="#" class="switch btn btn-block" id="signup">Create New Account?</a>
+                                                <a "href="#" class="switch btn btn-block" id="signup">Create New Account?</a>
                                             </div>
                                         </div>
                                     </form>
@@ -153,15 +138,11 @@
     <script src="./resources/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="./resources/js/jquery.cookie.min.js"></script>
+    <script src="./resources/js/sweetalert2.all.min.js"></script>
+    <script src="./resources/js/promise-polyfill.js"></script>
     <script src="./resources/js/bootstrap.min.js"></script>
     <script src="./resources/js/login.js"></script>
-    
-    <script>
-        function aaa(message,secret) {
-            var hash = CryptoJS.AES.encrypt(message, secret);
-            return hash
-        }
-    </script>
     <script src="./resources/js/signup.js"></script>
     <script src="./resources/js/main.js"></script>
 </body>

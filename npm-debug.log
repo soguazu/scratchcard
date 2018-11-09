@@ -1,0 +1,168 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   '--save',
+1 verbose cli   'sweetalert2' ]
+2 info using npm@3.10.10
+3 info using node@v6.14.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData sweetalert2
+8 silly fetchNamedPackageData sweetalert2
+9 silly mapToRegistry name sweetalert2
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'sweetalert2',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'sweetalert2',
+12 silly mapToRegistry   name: 'sweetalert2',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/sweetalert2
+14 verbose request uri https://registry.npmjs.org/sweetalert2
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 10:15:22 AM
+17 verbose request id e0ba6c1a5a4aa48f
+18 http request GET https://registry.npmjs.org/sweetalert2
+19 http 200 https://registry.npmjs.org/sweetalert2
+20 verbose headers { date: 'Fri, 09 Nov 2018 09:15:42 GMT',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'transfer-encoding': 'chunked',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'set-cookie': [ '__cfduid=d3f75a992ad564b53a5ba5c1919bf17b31541754941; expires=Sat, 09-Nov-19 09:15:41 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+20 verbose headers   'cf-cache-status': 'REVALIDATED',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'cf-ray': '476f2d229bfbc502-LOS',
+20 verbose headers   etag: 'W/"13ed1ef973c80aec22fd8d8377ccef5e"',
+20 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+20 verbose headers   'last-modified': 'Thu, 08 Nov 2018 17:57:20 GMT',
+20 verbose headers   vary: 'accept-encoding, accept',
+20 verbose headers   'x-amz-meta-rev': '347-09b69c1b423bbe5b03fada7646245433',
+20 verbose headers   server: 'cloudflare',
+20 verbose headers   'content-encoding': 'gzip' }
+21 silly get cb [ 200,
+21 silly get   { date: 'Fri, 09 Nov 2018 09:15:42 GMT',
+21 silly get     'content-type': 'application/json',
+21 silly get     'transfer-encoding': 'chunked',
+21 silly get     connection: 'keep-alive',
+21 silly get     'set-cookie': [ '__cfduid=d3f75a992ad564b53a5ba5c1919bf17b31541754941; expires=Sat, 09-Nov-19 09:15:41 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+21 silly get     'cf-cache-status': 'REVALIDATED',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'cf-ray': '476f2d229bfbc502-LOS',
+21 silly get     etag: 'W/"13ed1ef973c80aec22fd8d8377ccef5e"',
+21 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+21 silly get     'last-modified': 'Thu, 08 Nov 2018 17:57:20 GMT',
+21 silly get     vary: 'accept-encoding, accept',
+21 silly get     'x-amz-meta-rev': '347-09b69c1b423bbe5b03fada7646245433',
+21 silly get     server: 'cloudflare',
+21 silly get     'content-encoding': 'gzip' } ]
+22 verbose get saving sweetalert2 to /home/cyberdemon/.npm/registry.npmjs.org/sweetalert2/.cache.json
+23 verbose correctMkdir /home/cyberdemon/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule sweetalert2@7.29.0 checking installable status
+37 silly cache add args [ 'sweetalert2', null ]
+38 verbose cache add spec sweetalert2
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'sweetalert2',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'sweetalert2',
+39 silly cache add   name: 'sweetalert2',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed sweetalert2@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for sweetalert2
+42 info addNameTag [ 'sweetalert2', 'latest' ]
+43 silly mapToRegistry name sweetalert2
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'sweetalert2',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'sweetalert2',
+46 silly mapToRegistry   name: 'sweetalert2',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/sweetalert2
+48 verbose addNameTag registry:https://registry.npmjs.org/sweetalert2 not in flight; fetching
+49 verbose get https://registry.npmjs.org/sweetalert2 not expired, no request
+50 silly addNameTag next cb for sweetalert2 with tag latest
+51 silly addNamed sweetalert2@7.29.0
+52 verbose addNamed "7.29.0" is a plain semver version for sweetalert2
+53 silly mapToRegistry name sweetalert2
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'sweetalert2',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'sweetalert2',
+56 silly mapToRegistry   name: 'sweetalert2',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/sweetalert2
+58 verbose addRemoteTarball https://registry.npmjs.org/sweetalert2/-/sweetalert2-7.29.0.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/sweetalert2/-/sweetalert2-7.29.0.tgz',
+59 verbose addRemoteTarball   '636aa5e0a57bbbb75501ef39104fc68a1a26b351' ]
+60 info retry fetch attempt 1 at 10:15:46 AM
+61 info attempt registry request try #1 at 10:15:46 AM
+62 http fetch GET https://registry.npmjs.org/sweetalert2/-/sweetalert2-7.29.0.tgz
+63 http fetch 200 https://registry.npmjs.org/sweetalert2/-/sweetalert2-7.29.0.tgz
+64 silly fetchAndShaCheck shasum 636aa5e0a57bbbb75501ef39104fc68a1a26b351
+65 verbose addTmpTarball /tmp/npm-17397-c6b4be24/registry.npmjs.org/sweetalert2/-/sweetalert2-7.29.0.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for sweetalert2@7.29.0
+67 verbose correctMkdir /home/cyberdemon/.npm correctMkdir not in flight; initializing
+68 silly cache afterAdd sweetalert2@7.29.0
+69 verbose afterAdd /home/cyberdemon/.npm/sweetalert2/7.29.0/package/package.json not in flight; writing
+70 verbose correctMkdir /home/cyberdemon/.npm correctMkdir not in flight; initializing
+71 verbose afterAdd /home/cyberdemon/.npm/sweetalert2/7.29.0/package/package.json written
+72 silly loadAllDepsIntoIdealTree Finishing
+73 silly loadIdealTree Finishing
+74 silly currentTree lib
+75 silly idealTree lib
+75 silly idealTree └── sweetalert2@7.29.0
+76 silly generateActionsToTake Starting
+77 silly install generateActionsToTake
+78 warn checkPermissions Missing write access to /usr/lib/node_modules
+79 silly rollbackFailedOptional Starting
+80 silly rollbackFailedOptional Finishing
+81 silly runTopLevelLifecycles Finishing
+82 silly install printInstalled
+83 verbose stack Error: EACCES: permission denied, access '/usr/lib/node_modules'
+83 verbose stack     at Error (native)
+84 verbose cwd /home/cyberdemon/Desktop/test/scratchcard
+85 error Linux 4.4.0-124-generic
+86 error argv "/usr/bin/node" "/usr/bin/npm" "install" "-g" "--save" "sweetalert2"
+87 error node v6.14.4
+88 error npm  v3.10.10
+89 error path /usr/lib/node_modules
+90 error code EACCES
+91 error errno -13
+92 error syscall access
+93 error Error: EACCES: permission denied, access '/usr/lib/node_modules'
+93 error     at Error (native)
+93 error  { Error: EACCES: permission denied, access '/usr/lib/node_modules'
+93 error     at Error (native)
+93 error   errno: -13,
+93 error   code: 'EACCES',
+93 error   syscall: 'access',
+93 error   path: '/usr/lib/node_modules' }
+94 error Please try running this command again as root/Administrator.
+95 verbose exit [ -13, true ]

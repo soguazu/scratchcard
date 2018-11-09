@@ -304,3 +304,12 @@ input::placeholder {
 .success-area {
     background-color: #ffffff;
 }
+
+
+.logout {
+    font-size: 1rem;
+}
+
+.logout:hover {
+    color: #7047d7 !important;
+}
