@@ -63,18 +63,6 @@ $(document).ready(function() {
                             $("#email").addClass("border-red");
                             $("#email").removeClass("border-green");
                             email = "";
-                            // if (JSON.stringify(feedback[0].email) === email_store) {
-                            //     $(".email-error").html("Email already exist!");
-                            //     $("#email").addClass("border-red");
-                            //     $("#email").removeClass("border-green");
-                            //     email = "";
-                                
-                            // } else {
-                            //     $(".email-error").html("<div class='text-success'><i class='far fa-thumbs-up'> Available</i></div>");
-                            //     $("#email").addClass("border-green");
-                            //     $("#email").removeClass("border-red");
-                            //     email = email_store;
-                            // }
                         }
                         
                     }, 1000);
@@ -181,20 +169,14 @@ $(document).ready(function() {
             var data = {"name": name, "email":email, "password": hash, "author":"grey"};
             $.ajax({
                 type: "POST",
+                contentType: "application/json; charset=utf-8",
                 url: "http://localhost:3000/users",
                 data: data,
                 dataType: "JSON",
                 beforeSend: function() {
                     $(".show-progress").addClass("progress");
                 },
-                success: function() {
-                    // swal({
-                    //     title: "Signup Successfully",
-                    //     text: "click to login",
-                    //     type: "success",
-                    //     closeOnConfirm: true,
-                    //     showLoaderOnConfirm: true
-                    // },
+                success: function() { 
                     setTimeout(function() {
                         $(".signup-cover").hide("slow");
                         $(".login-cover").show("slow");

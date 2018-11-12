@@ -21,12 +21,13 @@ html {
 
 body {
     height: auto;
-    background-color: #f3f3f2;
+    background-color: #fff;
     box-sizing: border-box;
+    height: 100%;
 }
 
 .header {
-    background-image: linear-gradient(#f93d66a4, #7047d7a4), url(/scratchcard/resources/images/bg.jpg);
+    background-image: linear-gradient(#1f4287a4, #21e6c1a4), url(/scratchcard/resources/images/bg.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,11 +40,11 @@ body {
 }
 
 .custom-nav {
-    background: linear-gradient(-45deg,#f93d67, #7047d7);
-    background: -webkit-linear-gradient(-45deg,hsl(347, 94%, 61%), #7047d7);
-    background: -moz-linear-gradient(-45deg,#f93d67, #7047d7);
-    background: -ms-linear-gradient(-45deg,#f93d67, #7047d7);
-    background: -o-linear-gradient(-45deg,#f93d67, #7047d7);
+    background: linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -webkit-linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -moz-linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -ms-linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -o-linear-gradient(-45deg,#1f4287, #21e6c1);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -66,7 +67,7 @@ body {
     color: #ffffff !important;
 }
 
-position {
+.position {
     position: relative;
 }
 
@@ -86,7 +87,7 @@ position {
 
 /* === Signup Form Design === */
 
-.card {
+.signup-cover .card {
     border: 0;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -105,15 +106,15 @@ position {
 
 
 
-.card-header {
+.signup-cover .card-header {
     background-color: #ffffff;
-    color: #7047d7;
+    color: #1F4287;
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.card-body {
+.signup-cover .card-body {
     background-color: #ffffff;
 }
 
@@ -123,7 +124,7 @@ position {
 }
 
 .form-control {
-    border-color: #7047d7; 
+    border-color: #1F4287; 
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -136,9 +137,11 @@ position {
 }
 
 textarea:focus,
+select:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="datetime"]:focus,
+input[type="date"]:focus,
 input[type="datetime-local"]:focus,
 input[type="date"]:focus,
 input[type="month"]:focus,
@@ -152,9 +155,19 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 .btn:focus,
 .uneditable-input:focus {   
-  border-color: #7047d780;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #7047d780;
+  border-color: #1F428780;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #1F428780;
   outline: 0 none;
+}
+
+.form-control:focus {
+    border-color: #1F428780;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #1F428780;
+    outline: 0 none;
+}
+
+.form-control {
+    color: #1F4287 !important;
 }
 
 textarea,
@@ -164,12 +177,12 @@ input[type="number"],
 input[type="email"],
 input[type="search"],
 .uneditable-input: {   
-    color: #7047d7 !important;
+    color: #1F4287 !important;
 }
 
 
 .form-btn {
-    background-color: #7047d7;
+    background-color: #1F4287;
     border: 0;
     border-radius: 0px;
     -webkit-border-radius: 0px;
@@ -180,11 +193,11 @@ input[type="search"],
 }
 
 .form-btn:hover {
-    background-color: #8160d6;
+    background-color: rgb(40, 71, 133);
 }
 
 .form-btn:focus {
-    background-color: #7047e7 !important;
+    background-color: #1F4287 !important;
 }
 
 .card::before {
@@ -199,12 +212,12 @@ input[type="search"],
     -ms-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
     transform: rotate(-10deg);
-    background-color: #7047d7;
+    background-color: #1F4287;
     z-index: -1;
 }
 
 input::placeholder {
-    color: #7047d7 !important;
+    color: #1f4287 !important;
     font-size: 14px;
 }
 
@@ -217,7 +230,7 @@ input::placeholder {
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
-    color: #0857a1;
+    color: #1f4287;
 }
 
 .fa-user-plus,
@@ -271,14 +284,14 @@ input::placeholder {
 }
 
 .fa-spinner {
-    color: #7047d7
+    color: #1f4287
 }
 
 .progress {
     width: 100%;
     height: 4px;
     position: relative;
-    background-color: #7047d7;
+    background-color: #1f4287;
 }
 
 .progress::before {
@@ -311,5 +324,224 @@ input::placeholder {
 }
 
 .logout:hover {
-    color: #7047d7 !important;
+    color: #21e6c1 !important;
+}
+
+.navbar-nav li {
+    margin-top: 0.5rem;
+}
+.name {
+    font-size: 1.3rem;
+    margin-right: 2rem;
+}
+
+
+
+.header-nav {
+    /* position: absolute; */
+    background: linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -webkit-linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -moz-linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -ms-linear-gradient(-45deg,#1f4287, #21e6c1);
+    background: -o-linear-gradient(-45deg,#1f4287, #21e6c1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -ms-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+.header-nav .navbar-brand {
+    
+    color: #ffffff !important;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    font-weight: 900;
+    z-index: 4;
+}
+
+.header-nav ul li a {
+    color: #ffffff !important;
+}
+
+.navbar-light .navbar-toggler {
+    color: #ffffff;
+    border-color: #fff;
+}
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+.side-nav {
+    /* position: absolute; */
+    background-color: #333333;
+    width: 100%;
+    height: auto !important;
+    min-height: 100%;
+    z-index: 3;
+    padding: 0;
+    padding-top: 4.5rem;
+
+
+}
+
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav ul li {
+    padding: 20px 10px;
+    border-bottom: 1px solid #21e6c1;
+}
+
+
+
+.side-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+}
+
+.side-nav ul li:hover {
+    background-color: #dddddd;
+    border-bottom: #fff;
+    color: #21e6c1 !important;
+}
+
+
+.side-nav ul li a i {
+    color: #fff;
+    margin: 0 1rem 0 1rem;
+
+}
+
+
+
+
+@media screen and (min-width: 353px) {
+    .side-nav {
+        width: 20%;
+        padding-top: 0;
+        position: absolute;
+    }
+
+    .side-nav ul li {
+        text-align: center;
+    }
+
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+
+    .side-nav ul li a i {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .side-nav {
+        position: absolute;
+        width: 15%;
+        padding-top: 0;
+    }
+
+    .side-nav ul li {
+        text-align: center;
+    }
+
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+
+    .side-nav ul li a i {
+        font-size: 3rem;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+    .side-nav {
+        position: absolute;
+    }
+}
+    
+    /* iPads (portrait) ----------- */
+    @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+        .side-nav {
+            position: absolute;
+        }
+    }
+
+@media screen and (min-width: 1000px) {
+    .side-nav {
+        width: 100%;
+        position: relative;
+    }
+
+    .side-nav ul li {
+        text-align: left;
+    }
+
+    .side-nav ul li span:nth-child(2) {
+        display: inline-block;
+    }
+
+    .side-nav ul li a i {
+        font-size: 1.5rem;
+    }
+}
+
+
+.dashboard-bg {
+    width: 100%;
+    height: auto !important;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.dashboard-header {
+    height: 3rem;
+    background-color: #fff;  
+}
+
+.dashboard-header h3 {
+    word-spacing: 2px;
+    font-weight: 400;
+    width: auto;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    word-spacing: 4px;
+    color: #888888; 
+    padding-top: 0.7rem;
+}
+
+.generate-card-form {
+    width: 100%;
+}
+.generate-card-form form {
+    width: 70%;
+    margin: 0 auto
+}
+
+.alert-format {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.one {
+    float: left;
+}
+
+.two{
+    float: right;
 }

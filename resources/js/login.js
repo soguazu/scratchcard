@@ -68,13 +68,27 @@ $(document).ready(function() {
                         var unhashed = CryptoJS.AES.decrypt(feedback[0].password, "password secret").toString(CryptoJS.enc.Utf8);
                         
                         if (unhashed === password) {
-                            var date = new Date();
-                            date.setTime(date.getTime() + (60 * 1000));
-                            $.cookie("username", feedback[0].name, {expires: date});
+                            // var date = new Date();
+                            // date.setTime(date.getTime() + (10 * 1000));
+                            $.cookie("username", feedback[0].name);
+                            $.cookie("id", feedback[0].id);
                             $.cookie("userid", feedback[0].email, {expires: 10});
-                            window.location.href = "http://localhost:5500/scratchcard/dashboard.html";
+                            swal({
+                                title: "You welcome " + $.cookie("username"),
+                                text: "click to continue",
+                                type: "success"
+                            }).then(function() {
+                                window.location = "http://localhost:5500/scratchcard/dashboard.html";
+                            });
+                          
                         } else {
-                            alert("Invalid login");                           
+                            swal({
+                                title: "Something went wrong",
+                                text: "click to try again",
+                                type: "error",
+                                closeOnConfirm: true,
+                                showLoaderOnConfirm: true
+                            });                          
                         }
                     }
                 }
