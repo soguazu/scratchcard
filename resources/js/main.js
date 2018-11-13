@@ -15,37 +15,41 @@ $(document).ready(function() {
         var amount = $("#amount").val();
         var type = $("#type").val();
         var quantity = $("#quantity").val();
-        var pin = [];
+        // var pin = [];
         var userId = $.cookie("id");
-        var serialNo = (Math.random()+" ").substring(2,6)+(Math.random()+" ").substring(2,6);
-
+        // var serialNo = [];
+        
         for (var i = 0; i < quantity; i++) {
-            var element = (Math.random()+" ").substring(2,10)+(Math.random()+" ").substring(2,10);
-            // alert(element);
-            pin.push(element);
+            var serialNo = (Math.random()+" ").substring(2,6)+(Math.random()+" ").substring(2,6);
+
+            var pin = (Math.random()+" ").substring(2,10)+(Math.random()+" ").substring(2,10);
+
+            var cards = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "userId": userId};
+
+
+            $.ajax({
+                type: "POST",
+                // contentType: "application/json; charset=utf-8",
+                url: "http://localhost:3000/cards",
+                data: cards,
+                dataType: "JSON",
+                success: function() {
+                    window.location = "http://localhost:5500/scratchcard/dashboard.html";
+                },
+                error: function(response) {
+                    console.log(response);
+                    // alert("something went wrong");
+                }
+            }); 
+            
         }
-
-
-        var cards = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "quantity": quantity, "userId": userId};
+ 
 
         $("#date").val("");
         $("#amount").val("");
         $("#type").val("");
         $("#quantity").val("");
-            
-        $.ajax({
-            type: "POST",
-            // contentType: "application/json; charset=utf-8",
-            url: "http://localhost:3000/cards",
-            data: cards,
-            dataType: "JSON",
-            success: function() {
-                window.location = "http://localhost:5500/scratchcard/dashboard.html";
-            },
-            error: function() {
-                alert("something went wrong");
-            }
-        });           
+                     
     });
 
     
@@ -59,12 +63,12 @@ $(document).ready(function() {
             title: "Are you sure?",
             text: "You will not be able to recover this file!",
             type: "warning",
-            showCancelButton: true,
+            showCancelButton: false,
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "Yes, delete it!",
             closeOnConfirm: false
         }).then(function (isConfirm) {
-            if (!isConfirm) return;
+            if (!isConfirm.value) return;
             $.ajax({
                 url: "http://localhost:3000/cards/" + closestTr,
                 type: "DELETE",
@@ -80,18 +84,22 @@ $(document).ready(function() {
     
     }); 
 
-
+    $(".close").click(function() {
+        window.location = "http://localhost:5500/scratchcard/dashboard.html";
+    });
     $(document).on("click","#edit", function(){
         var closestTr = $(this).closest("tr").attr("id");
+        
         if (closestTr) {
-            $(this).prop("disabled", true);
+            // $(this).prop("disabled", true);
             $.ajax({
                 type: "GET",
                 url: "http://localhost:3000/cards/"+closestTr,
                 dataType: "JSON",
                 success: function(response) {
-                    var markup = "<div class='generate-card-form mt-5'><form><div class='form-group'><input type='date' class='form-control' id='date' placeholder='Date Created' value='"+ response.date +"'><input type='text' class='form-control' id='id' value='"+ response.id +"' hidden><input type='text' class='form-control' id='serialNo' value='"+ response.serialNo +"' hidden><input type='text' class='form-control' id='userId' value='"+ response.userId +"' hidden></div><div class='form-row'><div class='form-group col-md-6'><input type='text' class='form-control' id='amount' placeholder='Amount' value='"+response.amount+"'></div><div class='form-group col-md-4'><select id='type' class='form-control'><option selected>"+response.type+"</option><option>Mtn</option><option>Glo</option><option>Airtel</option></select></div><div class='form-group col-md-2'><input type='number' class='form-control' id='quantity' placeholder='Quantity' value='"+response.quantity+"'></div></div><button type='button' class='btn btn-primary btn btn-block rounded-0' id='update'>Update</button></form></div>";
-                    $(".updateCardForm").append(markup);
+                    var markup = "<div class='generate-card-form2 mt-2'><form><div class='form-group'><input type='date' class='form-control' id='date' placeholder='Date Created' value='"+ response.date +"'><input type='text' class='form-control' id='id' value='"+ response.id +"' hidden><input type='text' class='form-control' id='serialNo' value='"+ response.serialNo +"' hidden><input type='text' class='form-control' id='pin' value='"+ response.pin +"' hidden><input type='text' class='form-control' id='userId' value='"+ response.userId +"' hidden></div><div class='form-row'><div class='form-group col-md-6'><input type='text' class='form-control' id='amount' placeholder='Amount' value='"+response.amount+"'></div><div class='form-group col-md-6'><select id='type' class='form-control'><option selected>"+response.type+"</option><option>Mtn</option><option>Glo</option><option>Airtel</option></select></div><button type='button' class='btn btn-primary btn btn-block rounded-5 form-btn' id='update'>Update</button></form></div>";
+                    
+                    $(".modal-body").append(markup);
                     
                 }
             });
@@ -107,22 +115,15 @@ $(document).ready(function() {
         var date = $("#date").val();
         var amount = $("#amount").val();
         var type = $("#type").val();
-        var quantity = $("#quantity").val();
+        // var quantity = $("#quantity").val();
         var userId = $("#userId").val();
         var serialNo = $("#serialNo").val();
-        var pin = [];
-
-        
-        
-        for (var i = 0; i < quantity; i++) {
-            var element = (Math.random()+" ").substring(2,10)+(Math.random()+" ").substring(2,10);
-            // alert(element);
-            pin.push(element);
-        }
+        var pin = $("#pin").val();
 
 
 
-        var updateCard = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "quantity": quantity, "userId": userId};
+
+        var updateCard = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "userId": userId};
         $.ajax({
             type: "PUT",
             url: "http://localhost:3000/cards/"+id,
@@ -166,7 +167,7 @@ $(document).ready(function() {
                           "<span class='one'>Date Generated:</span> <strong><span class='two'>" + response.date +"</strong></span><br>" +
                           "<span class='one'>Recharge Type: </span><strong><span class='two'>" + response.type +"</strong></span><br>" +
                           "<span class='one'>Recharge Amount: </span><strong><span class='two'>&#x20A6;" + response.amount +"</strong></span><br>" +
-                          "<span class='one'>Quantity Generated: </span><strong><span class='two'>" + response.quantity +"</strong></span><br>" +
+                          
                           "</div>"
 
                     });

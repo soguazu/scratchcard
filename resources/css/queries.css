@@ -1,0 +1,105 @@
+/* from big tablets to 1200px (width smaller than the 1140px row ) */
+@media only screen and (max-width: 1200px) {
+    
+    
+    
+}
+
+/* samll tablets to big tablets: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+   
+    
+}
+
+
+/* small phones to small tablets: from 481px - 767px */
+@media only screen and (max-width: 767px) {
+    
+    
+}
+
+
+/* small phones to small tablets: from 481px - 767px */
+@media only screen and (max-width: 481px) {
+    
+   
+}
+
+
+
+
+
+
+/* @media screen and (min-width: 353px) {
+    .side-nav {
+        width: 20%;
+        padding-top: 0;
+        position: absolute;
+    }
+
+    .side-nav ul li {
+        text-align: center;
+    }
+
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+
+    .side-nav ul li a i {
+        font-size: 2.5rem;
+    }
+} */
+
+/* @media screen and (min-width: 600px) {
+    .side-nav {
+        position: absolute;
+        width: 15%;
+        padding-top: 0;
+    }
+
+    .side-nav ul li {
+        text-align: center;
+    }
+
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+
+    .side-nav ul li a i {
+        font-size: 3rem;
+    }
+} */
+
+/* iPads (landscape) ----------- */
+/* @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { */
+    /* Styles */
+    /* .side-nav {
+        position: absolute;
+    }
+} */
+    
+    /* iPads (portrait) ----------- */
+    /* @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+        .side-nav {
+            position: absolute;
+        }
+    } */
+
+/* @media screen and (min-width: 1000px) {
+    .side-nav {
+        width: 100%;
+        position: relative;
+    }
+
+    .side-nav ul li {
+        text-align: left;
+    }
+
+    .side-nav ul li span:nth-child(2) {
+        display: inline-block;
+    }
+
+    .side-nav ul li a i {
+        font-size: 1.5rem;
+    }
+} */

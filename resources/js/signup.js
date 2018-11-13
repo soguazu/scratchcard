@@ -135,7 +135,7 @@ $(document).ready(function() {
 
     $("#submit").click(function(event) {
         event.preventDefault();
-        event.stopPropagation();
+        // event.stopPropagation();
         if (name.length == "" || !name_reg.test(name)) {
             $(".name-error").html("Name is required!");
             $("#name").addClass("border-red");
@@ -169,7 +169,7 @@ $(document).ready(function() {
             var data = {"name": name, "email":email, "password": hash, "author":"grey"};
             $.ajax({
                 type: "POST",
-                contentType: "application/json; charset=utf-8",
+                // contentType: "application/json; charset=utf-8",
                 url: "http://localhost:3000/users",
                 data: data,
                 dataType: "JSON",
