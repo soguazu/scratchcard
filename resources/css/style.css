@@ -27,8 +27,9 @@ body {
     height: 100%;
 }
 
+
 .header {
-    background-image: linear-gradient(45deg,#5200c5, rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/1374357/pexels-photo-1374357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: linear-gradient(45deg,#4476ef, rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1559109/pexels-photo-1559109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -63,7 +64,7 @@ body {
 }
 
 .custom-nav .navbar-brand {
-    color: #6300ea !important;
+    color: #4476ef !important;
     font-family: 'Pacifico', cursive;
     font-size: 30px;
     font-weight: 900;
@@ -144,7 +145,7 @@ body {
 
 .signup-cover .card-header {
     background-color: #ffffff;
-    color: #6300ea;
+    color: #4476ef;
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -152,7 +153,7 @@ body {
 
 .login-cover .card-header {
     background-color: #ffffff;
-    color: #6300ea;
+    color: #4476ef;
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -169,11 +170,11 @@ body {
 .form-heading {
     font-weight: 700;
     text-align: center;
-    color: #6300ea
+    color: #044bf1;
 }
 
 .form-control {
-    border-color: #6300ea; 
+    border-color: #4476ef; 
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -204,19 +205,19 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 .btn:focus,
 .uneditable-input:focus {   
-  border-color: #6300ea;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #6300ea80;
+  border-color: #4476ef;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #4476ef80;
   outline: 0 none;
 }
 
 .form-control:focus {
-    border-color: #6300ea80;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #6300ea80;
+    border-color: #4476ef80;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px  #4476ef80;
     outline: 0 none;
 }
 
 .form-control {
-    color: #6300ea !important;
+    color: #4476ef !important;
 }
 
 textarea,
@@ -226,7 +227,7 @@ input[type="number"],
 input[type="email"],
 input[type="search"],
 .uneditable-input: {   
-    color: #6300ea !important;
+    color: #4476ef !important;
 }
 
 .generate-card-form  {
@@ -234,7 +235,7 @@ input[type="search"],
 }
 
 .form-btn {
-    background-color: #6300ea;
+    background-color: #4476ef;
     border: 0;
     border-radius: 100px;
     -webkit-border-radius: 100px;
@@ -245,21 +246,21 @@ input[type="search"],
 }
 
 .form-serach {
-    background-color: #6300ea;
+    background-color: #4476ef;
     color: #fff;
     font-size: 16px;
 }
 
 .form-btn:hover {
-    background-color: #6300ea;
+    background-color: #044bf1;
 }
 
 .form-serach:hover {
-    background-color: #6300ea;
+    background-color: #4476ef;
 }
 
 .form-btn:focus {
-    background-color: #6300ea !important;
+    background-color: #4476ef !important;
 }
 
 .card::before {
@@ -274,12 +275,12 @@ input[type="search"],
     -ms-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
     transform: rotate(-10deg);
-    background-color: #6300ea;
+    background-color: #044bf1;
     z-index: -1;
 }
 
 input::placeholder {
-    color: #6300ea !important;
+    color: #044bf1 !important;
     font-size: 14px;
 }
 
@@ -292,7 +293,7 @@ input::placeholder {
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
-    color: #6300ea !important;
+    color: #044bf1 !important;
 }
 
 .fa-user-plus,
@@ -346,14 +347,14 @@ input::placeholder {
 }
 
 .fa-spinner {
-    color: #6300ea;
+    color: #4476ef;
 }
 
 .progress {
     width: 100%;
     height: 4px;
     position: relative;
-    background-color: #6300ea;
+    background-color: #4476ef;
 }
 
 .progress::before {
@@ -386,7 +387,7 @@ input::placeholder {
 }
 
 .logout:hover {
-    color: #6300ea !important;
+    color: #044bf1 !important;
 }
 
 .navbar-nav li {
@@ -412,7 +413,7 @@ input::placeholder {
 
 .header-nav .navbar-brand {
     
-    color: #6300ea !important;
+    color: #044bf1 !important;
     font-family: 'Pacifico', cursive;
     font-size: 30px;
     font-weight: 900;
@@ -435,7 +436,7 @@ input::placeholder {
 
 .side-nav {
     /* position: absolute; */
-    background-color: #6300ea;
+    background-color: #4476ef;
     width: 1000 !important;
     height: auto !important;
     min-height: 100%;
@@ -460,12 +461,12 @@ input::placeholder {
 }
 
 .dashboard-header .btn-light {
-    background-color: #6300ea !important;
+    background-color: #4476ef !important;
     color: #fff !important;
 }
 
 .dashboard-header .btn-light:hover {
-    background-color: #7e23fd !important;
+    background-color: #044bf1 !important;
     color: #fff !important;
 }
 
@@ -477,9 +478,8 @@ input::placeholder {
 }
 
 .side-nav ul li:hover {
-    background-color: #7521eb;
+    background-color: #044bf1;
     border-bottom: #fff;
-    color: #21e6c1 !important;
 }
 
 
@@ -500,10 +500,6 @@ input::placeholder {
 }
 
 
-/* th {
-    background-color: #888888 !important;
-    color: #eeeeee!important;
-} */
 
 
 .dashboard-bg {
@@ -531,6 +527,11 @@ input::placeholder {
     color: #888888; 
     padding-top: 0.7rem;
 }
+
+/* .btn-icon {
+    background-color: #4476ef;
+    color: #fff
+} */
 
 .generate-card-form {
     width: 100%;

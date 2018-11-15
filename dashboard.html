@@ -97,13 +97,13 @@
                             <a href="generate-card.html" class="btn btn-light btn-lg card-button">Generate Cards</a>
                         </div>
                         <form class="form-inline my-2 my-lg-0 float-right">
-                            <input class="form-control ml-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success form-serach rounded-0 my-2 my-sm-0 mr-3" type="submit">Search</button>
+                            <input class="form-control ml-sm-2 mr-3" id="filter" type="search" placeholder="Search" aria-label="Search">
+                            <!-- <button class="btn btn-outline-success form-serach rounded-0 my-2 my-sm-0 mr-3" type="button" id="search">Search</button> -->
                         </form>
                         <div class="container-fluid mt-5">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <table class="table text-center table-responsive-sm">
+                                    <table class="table text-center table-responsive-sm" id="myTable">
                                         <thead class="thead-light">
                                             <tr>
                                             <th scope="col">#</th>
@@ -162,8 +162,9 @@
     
 
     <script src="./resources/js/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="./resources/js/popper.min.js"></script>
+    <script src="./resources/js/aes.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script> -->
     <script src="./resources/js/jquery.cookie.min.js"></script>
     <script src="./resources/js/sweetalert2.all.min.js"></script>
     <script src="./resources/js/promise-polyfill.js"></script>
@@ -182,23 +183,20 @@
     </script>
     <script>
         function getCards() {
-        $.ajax({
+            
+            $.ajax({
             type: "GET",
             url: "http://localhost:3000/cards",
             dataType: "JSON",
             success: function(response) {
                 JSON.stringify(response);
-                var count;
-                console.log(response);
-                
+                var count; 
                 for (var i = 0; i < response.length; i++) {
                     count = i + 1;
 
                     
-                    var markup = "<tr id='" + response[i].id + "'><td>" + count + "</td><td class='word-wrap'>" + response[i].serialNo + "</td><td class='word-wrap'>" + response[i].pin + "</td><td>" + response[i].date + "</td><td>" + response[i].type + "</td><td>" + response[i].amount + "</td><td><button type='button' class='btn btn-light view mr-2 rounded-5' id='view'><i class='fas fa-eye'></i></button><button type='button' class='btn btn-light mr-2 rounded-5' id='edit' data-toggle='modal' data-target='#exampleModalCenter'><i class='fas fa-edit'></i></button><button type='button' class='btn btn-light rounded-5' id='delete'><i class='fas fa-trash-alt'></i></button></td></tr>";
-                    $("table tbody").append(markup);
-                    
-                    
+                    var markup = "<tr id='" + response[i].id + "'><td>" + count + "</td><td class='word-wrap'>" + response[i].serialNo + "</td><td class='word-wrap'>" + response[i].pin + "</td><td>" + response[i].date + "</td><td>" + response[i].type + "</td><td>" + response[i].amount + "</td><td><button type='button' class='btn btn-light view mr-2 rounded-5  btn-icon' id='view'><i class='fas fa-eye btn-icon'></i></button><button type='button' class='btn btn-light mr-2 rounded-5  btn-icon' id='edit' data-toggle='modal' data-target='#exampleModalCenter'><i class='fas fa-edit'></i></button><button type='button' class='btn btn-light rounded-5  btn-icon' id='delete'><i class='fas fa-trash-alt'></i></button></td></tr>";
+                    $("table tbody").append(markup);  
                 }  
             }
         });

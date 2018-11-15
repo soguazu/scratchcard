@@ -10,6 +10,16 @@ $(document).ready(function() {
         $(".login-cover").hide("slow");
     });
 
+    $(document).ready(function(){
+        $("#filter").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+
+    
     $("#generate").click(function() {
         var date = $("#date").val();
         var amount = $("#amount").val();
@@ -87,6 +97,8 @@ $(document).ready(function() {
     $(".close").click(function() {
         window.location = "http://localhost:5500/scratchcard/dashboard.html";
     });
+
+
     $(document).on("click","#edit", function(){
         var closestTr = $(this).closest("tr").attr("id");
         
