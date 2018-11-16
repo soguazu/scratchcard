@@ -23,8 +23,10 @@ $(document).ready(function() {
     $("#generate").click(function() {
         var date = $("#date").val();
         var amount = $("#amount").val();
-        var type = $("#type").val();
+        var type = $("#type").val().toLowerCase();
         var quantity = $("#quantity").val();
+        var status = "UNPAID";
+        var name = $.cookie("username");
         // var pin = [];
         var userId = $.cookie("id");
         // var serialNo = [];
@@ -34,7 +36,7 @@ $(document).ready(function() {
 
             var pin = (Math.random()+" ").substring(2,10)+(Math.random()+" ").substring(2,10);
 
-            var cards = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "userId": userId};
+            var cards = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "userId": userId, "status": status, "name": name};
 
 
             $.ajax({
@@ -109,7 +111,7 @@ $(document).ready(function() {
                 url: "http://localhost:3000/cards/"+closestTr,
                 dataType: "JSON",
                 success: function(response) {
-                    var markup = "<div class='generate-card-form2 mt-2'><form><div class='form-group'><input type='date' class='form-control' id='date' placeholder='Date Created' value='"+ response.date +"'><input type='text' class='form-control' id='id' value='"+ response.id +"' hidden><input type='text' class='form-control' id='serialNo' value='"+ response.serialNo +"' hidden><input type='text' class='form-control' id='pin' value='"+ response.pin +"' hidden><input type='text' class='form-control' id='userId' value='"+ response.userId +"' hidden></div><div class='form-row'><div class='form-group col-md-6'><input type='text' class='form-control' id='amount' placeholder='Amount' value='"+response.amount+"'></div><div class='form-group col-md-6'><select id='type' class='form-control'><option selected>"+response.type+"</option><option>Mtn</option><option>Glo</option><option>Airtel</option></select></div><button type='button' class='btn btn-primary btn btn-block rounded-5 form-btn' id='update'>Update</button></form></div>";
+                    var markup = "<div class='generate-card-form2 mt-2'><form><div class='form-group'><input type='date' class='form-control' id='date' placeholder='Date Created' value='"+ response.date +"'><input type='text' class='form-control' id='id' value='"+ response.id +"' hidden><input type='text' class='form-control' id='status' value='"+ response.status +"' hidden><input type='text' class='form-control' id='serialNo' value='"+ response.serialNo +"' hidden><input type='text' class='form-control' id='pin' value='"+ response.pin +"' hidden><input type='text' class='form-control' id='userId' value='"+ response.userId +"' hidden></div><div class='form-row'><div class='form-group col-md-6'><input type='text' class='form-control' id='amount' placeholder='Amount' value='"+response.amount+"'></div><div class='form-group col-md-6'><select id='type' class='form-control'><option selected>"+response.type+"</option><option>Mtn</option><option>Glo</option><option>Airtel</option></select></div><button type='button' class='btn btn-primary btn btn-block rounded-5 form-btn' id='update'>Update</button></form></div>";
                     
                     $(".modal-body").append(markup);
                     
@@ -128,14 +130,15 @@ $(document).ready(function() {
         var amount = $("#amount").val();
         var type = $("#type").val();
         // var quantity = $("#quantity").val();
+        var status = "UNPAID";
         var userId = $("#userId").val();
         var serialNo = $("#serialNo").val();
         var pin = $("#pin").val();
 
 
 
+        var updateCard = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "userId": userId, "status": status, "name": $.cookie("username")};
 
-        var updateCard = {"pin": pin, "serialNo":serialNo, "date": date, "type": type, "amount": amount, "userId": userId};
         $.ajax({
             type: "PUT",
             url: "http://localhost:3000/cards/"+id,
@@ -188,6 +191,23 @@ $(document).ready(function() {
         }
     });
 
-   
+    $(document).on("click","#pay", function() {
+        var amount = [];
+        var sumVal = 0;
+        var table = document.getElementById("myTable");
+                
+        for (var i = 0; i < table.rows.length; i++) {
+            amount.push(parseInt(table.rows[i].cells[5].innerHTML.split("Amount").join("")));
+        }
+        var totalAmt = amount.splice(1);
+        for (var j = 0; j < totalAmt.length; j++) {
+            sumVal += totalAmt[j];
+        }
+
+        $.cookie("amount", sumVal);
+
+        window.location = "http://localhost:5500/scratchcard/payment.html";
+        
+    });
 
 });

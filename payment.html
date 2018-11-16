@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generate Cards</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Paytone+One" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/all.min.css">
+    <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+       
+        <div class="header-nav">
+            <a href="#" class="nav-trigger"><span></span></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 side-nav">
+                        <div class="brand-logo mb-5" href="#">ScratchDam</div>
+                        <ul id="">
+                            <li>
+                                <a href="dashboard.html">
+                                    <span>
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </span>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="generate-card.html">
+                                    <span>
+                                        <i class="far fa-credit-card"></i>
+                                    </span>
+                                    <span>Generate Cards</span>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="user-profile.html">
+                                    <span>
+                                        <i class="fas fa-user-alt"></i>
+                                    </span>
+                                    <span>Profile</span>
+                                </a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="payment.html">
+                                    <span>
+                                        <i class="fas fa-credit-card"></i>
+                                    </span>
+                                    <span>Make Payment</span>
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="contact.html">
+                                    <span>
+                                        <i class="fas fa-headset"></i>
+                                    </span>
+                                    <span>Contact</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="logout">
+                                    <span>
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </span>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="col-md-10 dashboard-bg">
+                    <main>
+                        <div class="dashboard-header">
+                            <a href="generate-card.html" class="btn btn-light btn-lg card-button">Make Payment</a>     
+                        </div>
+                       <div class="container h-100 mt-5">
+                           <div class="row d-flex dlex-wrap h-100 justify-content-center align-items-center">
+                               <div class="col-xs-12 col-md-4 payment">
+                                    <div class="payment-form">
+                                        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                                            <div class="card-header text-center">Payment Details
+                                                <div class="display-td" >                            
+                                                    <img class="img-responsive" src="http://i76.imgup.net/accepted_c22e0.png">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="card-body">
+                                              <!-- <h5 class="card-title">Light card title</h5>
+                                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                              <form>
+                                                <div class="form-row">
+                                                  <div class="form-group col-md-12 mb-4">
+                                                        <label for="account">CARD NUMBER</label>
+                                                        <i class="fas fa-credit-card"></i>
+                                                        <input type="text" class="form-control empty" id="account" placeholder="Valid Card Number" required autofocus>
+                                                        <div class="account-error error"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="form-row">
+                                                        <div class="form-group col-md-5">
+                                                          <label for="month">EXPIRY DATE</label>
+                                                          <input type="text" class="form-control" id="month" placeholder="MM">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                          <label for="year">YEAR</label>
+                                                          <input type="text" class="form-control" id="year" placeholder="YY">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                          <label for="cvc">CVC</label>
+                                                          <input type="text" class="form-control" id="cvc" placeholder="CV">
+                                                        </div>
+                                                      </div>
+                                                
+                                                    <button type="button" class="btn btn-primary btn-block mb-3">
+                                                        Final Payment <span class="badge badge-light ml-3 display amount">&#8358; </span>
+                                                    </button>
+                                                    
+                                                <button type="submit" class="btn btn-success btn-block" id="payBtn">Pay</button>
+                                              </form>
+                                            </div>
+                                          </div>
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+                        
+                    </main>
+                </div>
+            </div>
+        </div>
+
+    
+
+    <script src="./resources/js/jquery.js"></script>
+    <script src="./resources/js/popper.min.js"></script>
+    <script src="./resources/js/aes.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+
+    <!-- If you're using Stripe for payments -->
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="./resources/js/jquery.cookie.min.js"></script>
+    <script src="./resources/js/sweetalert2.all.min.js"></script>
+    <script src="./resources/js/promise-polyfill.js"></script>
+    <script src="./resources/js/bootstrap.min.js"></script>
+    <script src="./resources/js/login.js"></script>
+    <script src="./resources/js/signup.js"></script>
+    <script src="./resources/js/logout.js"></script>
+    <script src="./resources/js/main.js"></script>
+    <script src="./resources/js/payment.js"></script>
+    <script>
+        if($.cookie("userid") == null) {
+            window.location.href = "http://localhost:5500/scratchcard";
+            
+        } else {
+            $(".name").append($.cookie("username"));
+            $(".amount").append($.cookie("amount"));
+        }
+    </script>
+</body>
+</html>

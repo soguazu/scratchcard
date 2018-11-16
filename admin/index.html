@@ -46,14 +46,14 @@
                                     <span>Profile</span>
                                 </a>
                             </li> -->
-                            <!-- <li>
+                            <li>
                                 <a href="payment.html">
                                     <span>
                                         <i class="fas fa-credit-card"></i>
                                     </span>
                                     <span>Make Payment</span>
                                 </a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="contact.html">
                                     <span>
@@ -77,15 +77,12 @@
                         <div class="dashboard-header">
                             <a href="generate-card.html" class="btn btn-light btn-lg card-button">View Generated Cards</a>
                         </div>
-                        <div>
-                            <button type='button' id='pay' class='btn btn-success mt-3'>Make Payment <i class='far fa-money-bill-alt ml-3'></i></button>
-                        </div>
                         <form class="form-inline my-2 my-lg-0 float-right">
-                            <input class="form-control ml-sm-2 mr-3" id="filter" type="search" placeholder="Filter" aria-label="Search">
+                            <input class="form-control ml-sm-2 mr-3" id="filter" type="search" placeholder="Search" aria-label="Search">
                         </form>
                         <div class="container-fluid mt-5">
                             <div class="row">
-                                <div class="col-md-12 " id="cards-view">
+                                <div class="col-md-12">
                                     <table class="table text-center table-responsive-sm" id="myTable">
                                         <thead class="thead-light">
                                             <tr>
@@ -95,8 +92,6 @@
                                             <th scope="col">Date Created</th>
                                             <th scope="col">Airtime Type</th>
                                             <th scope="col">Amount</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Created By</th>
                                             <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -120,7 +115,6 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    
                                                     
                                                 </div>
                                                 
@@ -159,12 +153,13 @@
     <script src="./resources/js/signup.js"></script>
     <script src="./resources/js/logout.js"></script>
     <script src="./resources/js/main.js"></script>
-    <script src="./resources/js/payment.js"></script>
     <script>
         if($.cookie("userid") == null) {
             window.location.href = "http://localhost:5500/scratchcard";
             
         } else {
+            var hash = CryptoJS.AES.encrypt("Livina1604", "password secret").toString();
+            console.log(hash);
             $(".name").append($.cookie("username"));
         }
     </script>
@@ -182,12 +177,9 @@
                     count = i + 1;
 
                     
-                    var markup = "<tr id='" + response[i].id + "'><td>" + count + "</td><td class='word-wrap'>" + response[i].serialNo + "</td><td class='word-wrap'>" + response[i].pin + "</td><td>" + response[i].date + "</td><td>" + response[i].type + "</td><td>" + response[i].amount + "</td><td>" + response[i].status + "</td><td>" + response[i].name + "</td><td><button type='button' class='btn btn-light view mr-2 rounded-5  btn-icon' id='view'><i class='fas fa-eye btn-icon'></i></button><button type='button' class='btn btn-light mr-2 rounded-5  btn-icon' id='edit' data-toggle='modal' data-target='#exampleModalCenter'><i class='fas fa-edit'></i></button><button type='button' class='btn btn-light rounded-5  btn-icon' id='delete'><i class='fas fa-trash-alt'></i></button></td></tr>";
+                    var markup = "<tr id='" + response[i].id + "'><td>" + count + "</td><td class='word-wrap'>" + response[i].serialNo + "</td><td class='word-wrap'>" + response[i].pin + "</td><td>" + response[i].date + "</td><td>" + response[i].type + "</td><td>" + response[i].amount + "</td><td><button type='button' class='btn btn-light view mr-2 rounded-5  btn-icon' id='view'><i class='fas fa-eye btn-icon'></i></button><button type='button' class='btn btn-light mr-2 rounded-5  btn-icon' id='edit' data-toggle='modal' data-target='#exampleModalCenter'><i class='fas fa-edit'></i></button><button type='button' class='btn btn-light rounded-5  btn-icon' id='delete'><i class='fas fa-trash-alt'></i></button></td></tr>";
                     $("table tbody").append(markup);  
-                      
                 }  
-                $("table tbody").append("");
-                
             }
         });
     }
